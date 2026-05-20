@@ -8,7 +8,7 @@ mcp = FastMCP("UNGM Notice Search")
 
 
 @mcp.tool()
-def search_ungm_notices(
+async def search_ungm_notices(
         title: Optional[str] = None,
         countries: Optional[List[str]] = None,
         deadline_from: Optional[str] = None,
@@ -28,7 +28,7 @@ def search_ungm_notices(
     client = UNGMClient(headless=True)
 
     try:
-        results = client.search_and_filter(
+        results = await client.search_and_filter(
             title=title,
             countries=countries,
             deadline_from=deadline_from,
