@@ -3,3 +3,4 @@ mcp>=1.27.1
 playwright>=1.60.0
 pytest
 pytest-asyncio
+pytest-cov

@@ -23,9 +23,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Tests
+      - name: Run Tests with Coverage
         run: |
-          python -m unittest test_main.py
+          pytest --cov=. --cov-report=term-missing
 
   deploy:
     needs: test
